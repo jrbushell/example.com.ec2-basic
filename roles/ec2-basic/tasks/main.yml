@@ -1,0 +1,5 @@
+- name: copy test-file.txt
+  copy:
+    src: test-file.txt
+    dest: /tmp/test-file.txt
+

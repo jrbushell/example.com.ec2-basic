@@ -1,0 +1,9 @@
+# hosts=all because won't really have an inventory.
+# become and user aren't needed as we will be running as root.
+
+- name: setup ec2 instance
+  hosts: all
+  gather_facts: true
+  roles:
+    - ec2-basic
+
