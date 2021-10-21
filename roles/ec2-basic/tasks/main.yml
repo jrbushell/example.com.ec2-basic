@@ -11,7 +11,7 @@
     state: directory
     mode: '0755'
 
-- name: mount:
+- name: mount
   command: mount /dev/xvdb /data
 
 - name: copy test-file.txt
