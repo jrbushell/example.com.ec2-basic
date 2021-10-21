@@ -1,5 +1,21 @@
+- name: wait for disk
+  wait_for:
+    path: /dev/xvdb
+
+- name: format disk
+  command: mkfs.xfs /dev/xvdb
+
+- name: mkdir
+  file:
+    path: /data
+    state: directory
+    mode: '0755'
+
+- name: mount:
+  command: mount /dev/xvdb /data
+
 - name: copy test-file.txt
   copy:
     src: test-file.txt
-    dest: /tmp/test-file.txt
+    dest: /data/test-file.txt
 
